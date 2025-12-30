@@ -3,129 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoomsDekho.in | Your Premium Housing Partner</title>
+    <title>RoomsDekho.in | Premium Mobile UI</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #FF2B2B;
             --dark: #0F172A;
-            --glass-bg: rgba(255, 255, 255, 0.98);
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0F172A;
+            --border: #e2e8f0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-
-        body { 
-            /* MMT Style Background */
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+        .dark-mode {
+            --bg: #020617;
+            --card-bg: #0f172a;
+            --text: #f8fafc;
+            --border: #1e293b;
         }
 
-        /* --- Global Permanent Header --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; transition: 0.3s ease; }
+
+        body { background: var(--bg); color: var(--text); padding-bottom: 80px; }
+
+        /* --- Header: Housing Style --- */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 8%; background: white; /* Clean White Header */
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 12px 5%; background: var(--card-bg); position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-bottom: 1px solid var(--border);
         }
-        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
-        .logo span { color: var(--dark); }
-
-        .nav-right { display: flex; gap: 20px; align-items: center; }
-        .nav-item { text-decoration: none; color: var(--dark); font-size: 14px; font-weight: 600; }
-        .btn-list { background: #3e2b77; color: white !important; padding: 8px 18px; border-radius: 4px; }
-
-        /* --- Main Content Area --- */
-        .hero-container {
-            flex: 1; display: flex; justify-content: center; align-items: center;
-            padding-top: 80px; /* Header space */
-        }
-
-        .action-card {
-            background: var(--glass-bg);
-            width: 90%; max-width: 950px;
-            padding: 50px 40px; border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-            text-align: center;
-        }
-
-        .hero-title { font-size: 36px; font-weight: 800; color: #1e293b; margin-bottom: 10px; }
-        .hero-subtitle { color: #64748b; font-size: 16px; margin-bottom: 40px; }
-
-        /* --- The Choice Buttons (Sleek UI) --- */
-        .choices { display: flex; gap: 25px; }
-
-        .box {
-            flex: 1; padding: 40px 20px; border-radius: 15px;
-            text-decoration: none; border: 1px solid #e2e8f0;
-            transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center;
-        }
-
-        /* Owner Path */
-        .owner-box { background: #ffffff; }
-        .owner-box:hover { border-color: var(--primary); transform: translateY(-8px); box-shadow: 0 10px 25px rgba(255,43,43,0.1); }
+        .logo { font-size: 20px; font-weight: 800; color: var(--primary); text-decoration: none; }
         
-        /* Finder Path */
-        .finder-box { background: var(--dark); color: white; border: none; }
-        .finder-box:hover { transform: translateY(-8px); background: #1e293b; }
-
-        .icon { font-size: 45px; margin-bottom: 20px; }
-        .box h2 { font-size: 24px; margin-bottom: 12px; }
-        .box p { font-size: 14px; opacity: 0.8; line-height: 1.5; margin-bottom: 25px; }
-
-        .btn {
-            padding: 12px 35px; border-radius: 50px; font-weight: 700;
-            text-transform: uppercase; font-size: 13px; border: none; cursor: pointer;
+        .header-btns { display: flex; gap: 10px; align-items: center; }
+        .mode-btn { 
+            background: var(--border); padding: 6px 12px; border-radius: 20px; 
+            font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px;
         }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-outline { background: transparent; border: 2px solid white; color: white; }
 
-        @media (max-width: 768px) {
-            .choices { flex-direction: column; }
-            .hero-title { font-size: 26px; }
-            body { height: auto; overflow: visible; }
+        /* --- Hero: MMT Style with Search --- */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80');
+            background-size: cover; background-position: center;
+            padding: 40px 5%; text-align: center; color: white; border-radius: 0 0 25px 25px;
         }
+        .hero h1 { font-size: 24px; font-weight: 800; margin-bottom: 5px; }
+        .hero p { font-size: 13px; opacity: 0.9; margin-bottom: 20px; }
+
+        .search-bar {
+            background: white; border-radius: 50px; display: flex; 
+            padding: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .search-bar input { 
+            border: none; flex: 1; padding: 10px 15px; 
+            border-radius: 50px; outline: none; font-size: 14px; color: #333;
+        }
+        .search-go { 
+            background: var(--primary); color: white; border: none; 
+            padding: 8px 18px; border-radius: 50px; font-weight: 700; font-size: 12px;
+        }
+
+        /* --- Split Experience Cards --- */
+        .container { padding: 25px 5%; display: flex; flex-direction: column; gap: 15px; }
+        
+        .action-card {
+            background: var(--card-bg); border-radius: 20px; padding: 20px;
+            display: flex; align-items: center; gap: 15px;
+            text-decoration: none; color: inherit; border: 1.5px solid var(--border);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .action-card:active { transform: scale(0.97); background: var(--border); }
+        .icon-box { font-size: 30px; background: #fff5f5; padding: 10px; border-radius: 15px; }
+        .action-card h2 { font-size: 17px; margin-bottom: 2px; }
+        .action-card p { font-size: 12px; opacity: 0.7; }
+
+        /* --- Bottom Navigation: Icons + Labels --- */
+        .bottom-nav {
+            position: fixed; bottom: 0; width: 100%; background: var(--card-bg);
+            display: flex; justify-content: space-around; padding: 10px 0;
+            border-top: 1px solid var(--border); z-index: 1001;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+        .nav-link { 
+            text-align: center; text-decoration: none; 
+            color: #94a3b8; font-size: 11px; font-weight: 600;
+            display: flex; flex-direction: column; align-items: center; gap: 2px;
+        }
+        .nav-link.active { color: var(--primary); }
+        .nav-icon { font-size: 22px; }
+
     </style>
 </head>
-<body>
+<body id="appBody">
 
     <header>
-        <a href="#" class="logo">Rooms<span>Dekho.in</span></a>
-        <div class="nav-right">
-            <a href="#" class="nav-item">Login / Register</a>
-            <a href="#" class="nav-item">About Us</a>
-            <a href="owner_dashboard.html" class="nav-item btn-list">SELL/RENT FOR FREE</a>
+        <a href="#" class="logo">RoomsDekho.in</a>
+        <div class="header-btns">
+            <div class="mode-btn" onclick="toggleMode()">
+                <span>🌓</span> <span id="modeLabel">Mode</span>
+            </div>
         </div>
     </header>
 
-    <div class="hero-container">
-        <div class="action-card">
-            <h1 class="hero-title">Trusted place to find a home</h1>
-            <p class="hero-subtitle">5K+ listings added daily and 71K+ total verified properties</p>
-
-            <div class="choices">
-                <a href="owner_dashboard.html" class="box owner-box">
-                    <div class="icon">🏠</div>
-                    <h2 style="color: #334155;">I am an Owner</h2>
-                    <p style="color: #64748b;">Post your property for free and reach 10k+ verified bachelors instantly.</p>
-                    <button class="btn btn-primary">List Property</button>
-                </a>
-
-                <a href="finder_search.html" class="box finder-box">
-                    <div class="icon">🔍</div>
-                    <h2>I am a Seeker</h2>
-                    <p>Search verified PGs, Hostels, and Flats near your college or office area.</p>
-                    <button class="btn btn-outline">Search Rooms</button>
-                </a>
-            </div>
+    <section class="hero">
+        <h1>Trusted place to find a home</h1>
+        <p>5K+ listings added daily • 0% Brokerage</p>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search locality or landmark...">
+            <button class="search-go">Search</button>
         </div>
+    </section>
+
+    <div class="container">
+        <p style="font-size: 12px; text-align: center; margin-bottom: 5px; font-weight: 700;">
+            Are you a Property Owner? <a href="#" style="color: var(--primary);">Sell / Rent for FREE ></a>
+        </p>
+
+        <a href="#" class="action-card">
+            <div class="icon-box">🏠</div>
+            <div>
+                <h2>I am an Owner</h2>
+                <p>Post property & get tenants fast.</p>
+            </div>
+        </a>
+
+        <a href="#" class="action-card" style="border-left: 5px solid var(--primary);">
+            <div class="icon-box">🔍</div>
+            <div>
+                <h2>I am a Seeker</h2>
+                <p>Find PGs, Hostels & Flats easily.</p>
+            </div>
+        </a>
     </div>
 
+    <nav class="bottom-nav">
+        <a href="#" class="nav-link active">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-link">
+            <span class="nav-icon">🔍</span>
+            <span>Search</span>
+        </a>
+        <a href="#" class="nav-link">
+            <span class="nav-icon">➕</span>
+            <span>List</span>
+        </a>
+        <a href="#" class="nav-link">
+            <span class="nav-icon">👤</span>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            const label = document.getElementById('modeLabel');
+            label.innerText = body.classList.contains('dark-mode') ? "Dark" : "Mode";
+        }
+    </script>
 </body>
 </html>
