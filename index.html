@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomsDekho.in | Premium Housing Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF2B2B;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body { background: #0f172a; color: white; overflow: hidden; height: 100vh; }
+
+        /* Full Screen Background Image with Overlay */
+        .hero-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; z-index: -1;
+        }
+
+        header {
+            padding: 20px 8%; display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo { font-size: 26px; font-weight: 800; color: white; text-decoration: none; }
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: 600; opacity: 0.8; }
+        .nav-links a:hover { opacity: 1; color: var(--primary); }
+
+        .btn-theme { background: var(--glass); border: 1px solid var(--glass-border); color: white; padding: 8px 15px; border-radius: 50px; cursor: pointer; }
+
+        /* Main Split Action */
+        .container {
+            display: flex; height: calc(100vh - 80px); width: 100%;
+        }
+
+        .side {
+            flex: 1; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; padding: 60px; transition: 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            position: relative; border-right: 1px solid var(--glass-border);
+            text-decoration: none; color: white;
+        }
+
+        .side:hover { background: rgba(255, 43, 43, 0.05); backdrop-filter: blur(5px); }
+
+        .label { font-size: 12px; font-weight: 800; color: var(--primary); letter-spacing: 2px; margin-bottom: 15px; }
+        h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; text-align: center; }
+        p { font-size: 1.1rem; opacity: 0.7; max-width: 400px; text-align: center; line-height: 1.6; }
+
+        .action-circle {
+            margin-top: 40px; width: 60px; height: 60px; border: 2px solid white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; transition: 0.4s;
+        }
+
+        .side:hover .action-circle { background: var(--primary); border-color: var(--primary); transform: scale(1.2) rotate(360deg); }
+
+        /* Trust Badges */
+        .trust-bar {
+            position: absolute; bottom: 40px; width: 100%; display: flex; justify-content: center; gap: 40px;
+            font-size: 13px; font-weight: 600; opacity: 0.6;
+        }
+
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .side { border-right: none; border-bottom: 1px solid var(--glass-border); }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body id="main">
+
+    <div class="hero-bg"></div>
+
+    <header>
+        <a href="#" class="logo">Rooms<span>Dekho.in</span></a>
+        <div class="nav-links">
+            <a href="#">List Property</a>
+            <a href="#">Help Center</a>
+            <a href="#" style="color: var(--primary);">Login / Sign Up</a>
+            <button class="btn-theme" onclick="alert('Dark Mode Active')">🌓</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="owner_dashboard.html" class="side">
+            <div class="label">OWNERS / LANDLORDS</div>
+            <h1>Rent Your <br>Space Fast.</h1>
+            <p>Post your property for 0% brokerage and reach 10k+ verified bachelors instantly.</p>
+            <div class="action-circle">→</div>
+        </a>
+
+        <a href="finder_search.html" class="side">
+            <div class="label">STUDENTS / PROFESSIONALS</div>
+            <h1>Find Your <br>Next Home.</h1>
+            <p>Search through thousands of verified PGs, Hostels, and Flats across India.</p>
+            <div class="action-circle">→</div>
+        </a>
+    </div>
+
+    <div class="trust-bar">
+        <span>✅ 100% Verified Listings</span>
+        <span>🚫 Zero Brokerage Fee</span>
+        <span>⚡ Instant Owner Connect</span>
+    </div>
+
+</body>
+</html>

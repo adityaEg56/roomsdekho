@@ -1,0 +1,3 @@
+function openAuth() {
+    alert("Bhai, Login system Nikhil aur Vishvash backend (Node.js/Firebase) se connect karenge. Abhi ke liye hum sirf UI dikha rahe hain!");
+}
