@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | RoomsDekho.in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF2B2B;
+            --dark: #0F172A;
+            --bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body { background: #f8fafc; display: flex; flex-direction: column; height: 100vh; }
+
+        /* Back Button Header */
+        header {
+            padding: 15px 5%; background: white; border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; gap: 15px;
+        }
+        .back-btn { font-size: 20px; text-decoration: none; color: var(--dark); }
+        .header-title { font-size: 16px; font-weight: 700; }
+
+        .login-container { padding: 30px 6%; flex: 1; background: white; border-radius: 30px 30px 0 0; margin-top: 20px; box-shadow: 0 -5px 15px rgba(0,0,0,0.05); }
+
+        .welcome-text { margin-bottom: 30px; }
+        .welcome-text h1 { font-size: 24px; color: var(--dark); margin-bottom: 8px; }
+        .welcome-text p { font-size: 14px; color: #64748b; line-height: 1.5; }
+
+        /* Tabs for Student/Owner */
+        .tabs { display: flex; background: #f1f5f9; padding: 5px; border-radius: 12px; margin-bottom: 25px; }
+        .tab { flex: 1; padding: 10px; text-align: center; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: 10px; color: #64748b; transition: 0.3s; }
+        .tab.active { background: white; color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+
+        /* Form Styling */
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--dark); }
+        .input-group input { 
+            width: 100%; padding: 14px 16px; border: 1.5px solid var(--border); 
+            border-radius: 12px; outline: none; font-size: 15px; 
+        }
+        .input-group input:focus { border-color: var(--primary); }
+
+        .login-btn { 
+            width: 100%; background: var(--primary); color: white; border: none; 
+            padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 800; cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .social-login { margin-top: 30px; text-align: center; }
+        .social-login p { font-size: 13px; color: #94a3b8; margin-bottom: 20px; position: relative; }
+        .social-login p::before, .social-login p::after { content: ""; position: absolute; top: 50%; width: 35%; height: 1px; background: #e2e8f0; }
+        .social-login p::before { left: 0; } .social-login p::after { right: 0; }
+
+        .google-btn { 
+            width: 100%; background: white; border: 1.5px solid var(--border); 
+            padding: 12px; border-radius: 12px; display: flex; align-items: center; 
+            justify-content: center; gap: 10px; font-weight: 600; font-size: 14px; cursor: pointer;
+        }
+        .google-btn img { width: 20px; }
+
+        footer { text-align: center; padding: 20px; font-size: 13px; color: #64748b; }
+        footer a { color: var(--primary); text-decoration: none; font-weight: 700; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">←</a>
+        <div class="header-title">RoomsDekho.in</div>
+    </header>
+
+    <div class="login-container">
+        <div class="welcome-text">
+            <h1>Chalo Shuru Karein!</h1>
+            <p>India's first student-focused platform. Login karke 0% brokerage ka fayda uthayein.</p>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab(this)">I am a Seeker</div>
+            <div class="tab" onclick="switchTab(this)">I am an Owner</div>
+        </div>
+
+        <div class="input-group">
+            <label>Mobile Number / Email</label>
+            <input type="text" placeholder="Enter your details...">
+        </div>
+
+        <button class="login-btn">Continue</button>
+
+        <div class="social-login">
+            <p>OR</p>
+            <button class="google-btn">
+                <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google">
+                Continue with Google
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        Naye hain yahan? <a href="#">Create Account</a>
+    </footer>
+
+    <script>
+        function switchTab(el) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
+</body>
+</html>
